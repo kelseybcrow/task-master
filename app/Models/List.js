@@ -1,9 +1,9 @@
 import { generateId } from "../utils.js";
 
 export default class List {
-  constructor({ title, id, tasks }) {
+  constructor({ name, id, tasks }) {
     console.log("making a list")
-    this.title = title
+    this.name = name
     this.id = id || generateId()
     this.tasks = tasks
   }
