@@ -1,10 +1,38 @@
 import { generateId } from "../utils.js";
 
 export default class List {
-  constructor(data) {
-    //TODO Your constructor takes in a data object that should have the properties you need to create your list here is a freebie, it will set the id its provided, or if that is undefined it will create a new one (this is an alternative to object destructuring)
-    this.id = data.id || generateId();
+  constructor({ title, id, tasks }) {
+    console.log("making a list")
+    this.title = title
+    this.id = id || generateId()
+    this.tasks = tasks
   }
-  //Be sure to add the methods needed to create the view template for this model
-  //For starting out, your tasks may be strings alone, but later you may wish to turn them into full objects, that will be up to you
+
+  get Template() {
+    return /*html*/`<div class="card col-3">
+                <div class="card-body d-flex flex-column">
+      <i class="fa fa-trash align-self-end" aria-hidden="true" onclick="app.listsController.removeList('${this.id}')"></i>
+                    <h4 class="card-title">${this.title}</h4>
+                    <ul>
+                        ${this.TasksTemplate}
+                    </ul>
+                    <form onsubmit="app.listsController.addTask(event, '${this.id}')">
+                      <div class="form-group d-flex">
+                        <input type="text" name="task" id="task" class="form-control" placeholder="Enter Task" aria-describedby="helpId">
+                      <button class="btn btn-danger" type="submit"> Add
+                      </button>
+                      </div>
+                    </form>
+                </div>
+            </div>`
+  }
+
+
+  get TasksTemplate() {
+    let template = ""
+    this.tasks.forEach(t => {
+      template += `<li>${t} <i class="fa fa-trash" aria-hidden="true" onclick="app.listsController.removeTask('${this.id}', '${t}')"></i> </li>`
+    });
+    return template
+  }
 }
