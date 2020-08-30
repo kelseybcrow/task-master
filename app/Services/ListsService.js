@@ -26,7 +26,7 @@ class ListsService {
   }
 
   removeTask(listId, taskName) {
-    let list = store.State.lists.find(l => l.id == ListId)
+    let list = store.State.lists.find(l => l.id == listId)
     let taskIndex = list.tasks.findIndex(t => t == taskName)
     list.tasks.splice(taskIndex, 1)
   }

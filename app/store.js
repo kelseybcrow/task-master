@@ -9,7 +9,8 @@ let _state = {
 
 //NOTE this method will get the lists from local storage at the start of the app
 function _loadState() {
-  let data = JSON.parse(localStorage.getItem("TaskMaster"));
+  // did this work below?
+  let data = JSON.parse(localStorage.getItem("lists"));
   if (data) {
     data.lists = data.lists.map(l => new List(l));
     _state = data;
@@ -27,7 +28,7 @@ class Store {
 
   //NOTE call saveState everytime you change the state in any way
   saveState() {
-    localStorage.setItem("TaskMaster", JSON.stringify(_state));
+    localStorage.setItem("lists", JSON.stringify(_state));
   }
 }
 
