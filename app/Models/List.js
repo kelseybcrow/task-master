@@ -5,11 +5,11 @@ export default class List {
     console.log("making lists")
     this.name = name
     this.id = id || generateId()
-    this.tasks = tasks || ["Example task", "Example task", "Example task"]
+    this.tasks = tasks || ["Example task 1", "Example task 2", "Example task 3"]
   }
 
   get Template() {
-    return /*html*/`<div class="card col-3 m-0 m-md-3">
+    return /*html*/`<div class="card col-12 col-md-4 col-lg-3 m-0 m-md-3">
                 <div class="card-body d-flex flex-column">
       <i class="fa fa-trash align-self-end" aria-hidden="true" onclick="app.listsController.removeList('${this.id}')"></i>
                     <h4 class="card-name">${this.name}</h4>
