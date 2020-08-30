@@ -13,21 +13,34 @@
 </head>
 
 <body>
-  <header class="container-fluid">
-    <div class="row no-gutters">
-      <div class="col-12"></div>
+  <header class="container-fluid bg-success">
+    <div class="row">
+      <div class="col text-center p-2">
+        <h2> Task Master </h2>
+      </div>
     </div>
   </header>
-  <main class="container-fluid">
-    <div class="row no-gutters">
-      <div class="col"></div>
+  <main class="container-fluid bg-light">
+    <div class="row">
+      <form class="col-12 col-md-4 mt-3" onsubmit="app.listsController.createList(event)">
+        <div class="form-group">
+          <input type="text" name="name" id="name" class="form-control  border-info" placeholder="Enter list name"
+            aria-describedby="helpId">
+          <button class="btn btn-info border-success form-control" type="submit">Create List</button>
+        </div>
+      </form>
+    </div>
+    <div class="row" id="lists">
     </div>
   </main>
-  <footer class="container-fluid">
-    <div class="row no-gutters">
-      <div class="col"></div>
+  <footer class="container-fluid bg-success">
+    <div class="row text-center">
+      <div class="col">
+        <p class="m-3">Made with love by Kelsey Crow</p>
+      </div>
     </div>
   </footer>
+  <script src='https://kit.fontawesome.com/d2e00f75e8.js' crossorigin='anonymous'></script>
   <script src="app/main.js" type="module"></script>
 </body>
 
