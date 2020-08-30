@@ -2,7 +2,7 @@ import store from "../store.js";
 import List from "../Models/List.js";
 
 //Public
-class ListService {
+class ListsService {
 
   constructor() {
     // console.log(store.State.pizzas)
@@ -32,5 +32,5 @@ class ListService {
   }
 }
 
-const SERVICE = new ListService();
-export default SERVICE;
+const LIST_SERVICE = new ListsService();
+export default LIST_SERVICE
