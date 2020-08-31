@@ -10,21 +10,35 @@ export default class List {
 
   get Template() {
     return /*html*/`<div class="card col-12 col-md-4 col-lg-3 m-0 m-md-3">
-                <div class="card-body d-flex flex-column">
-      <i class="fa fa-trash align-self-end" aria-hidden="true" onclick="app.listsController.removeList('${this.id}')"></i>
-                    <h4 class="card-name">${this.name}</h4>
-                    <ul>
-                        ${this.TasksTemplate}
-                    </ul>
-                    <form onsubmit="app.listsController.addTask(event, '${this.id}')">
-                      <div class="form-group d-flex">
-                        <input type="text" name="task" id="task" class="form-control" placeholder="Enter Task" aria-describedby="helpId">
-                      <button class="btn btn-info" type="submit"> Add
-                      </button>
-                      </div>
-                    </form>
-                </div>
-            </div>`
+    <div class="card-header d-flex flex-column" id="card-header">
+      <i class="fa fa-trash align-self-end" aria-hidden="true"
+        onclick="app.listsController.removeList('${this.id}')"></i>
+      <h4 class="card-name">${this.name}</h4>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Color
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="pink" href="#">Pink</a>
+          <a class="purple" href="#">Purple</a>
+          <a class="green" href="#">Green</a>
+      </div>
+</div>
+    </div>
+    <div class="card-body d-flex flex-column">
+      <ul>
+        ${this.TasksTemplate}
+      </ul>
+      <form onsubmit="app.listsController.addTask(event, '${this.id}')">
+        <div class="form-group d-flex">
+          <input type="text" name="task" id="task" class="form-control" placeholder="Enter Task"
+            aria-describedby="helpId">
+          <button class="btn btn-info" type="submit"> Add
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>`
   }
 
 
