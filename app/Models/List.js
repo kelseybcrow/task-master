@@ -15,15 +15,16 @@ export default class List {
         onclick="app.listsController.removeList('${this.id}')"></i>
       <h4 class="card-name">${this.name}</h4>
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Color
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Color
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="pink" href="#">Pink</a>
-          <a class="purple" href="#">Purple</a>
-          <a class="green" href="#">Green</a>
+          <a class="dropdown-item" id="pink" onclick="app.listsController.colorChange(pink)" href="#">Pink</a>
+          <a class="dropdown-item" id="purple" onclick="app.listsController.colorChange(purple)" href="#">Purple</a>
+          <a class="dropdown-item" id="green" onclick="app.listsController.colorChange(green)" href="#">Green</a>
+        </div>
       </div>
-</div>
     </div>
     <div class="card-body d-flex flex-column">
       <ul>

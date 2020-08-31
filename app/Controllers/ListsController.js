@@ -51,4 +51,20 @@ export default class ListsController {
     _drawLists()
   }
 
+  colorChange(color) {
+    let cardHeader = document.getElementById("card-header")
+    if (color == pink) {
+      cardHeader.style.backgroundColor = "pink"
+      console.log("pink");
+    }
+    if (color == purple) {
+      cardHeader.style.backgroundColor = "purple"
+      console.log("purple");
+    }
+    if (color == green) {
+      cardHeader.style.backgroundColor = "green"
+      console.log("green");
+    }
+  }
+
 }
