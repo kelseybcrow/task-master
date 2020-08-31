@@ -32,9 +32,10 @@ export default class ListsController {
 
   removeList(id) {
     console.log(id)
-    confirm("Are you sure?")
-    _listServ.deleteList(id)
-    _drawLists()
+    if (confirm("Are you sure?") == true) {
+      _listServ.deleteList(id)
+      _drawLists()
+    }
   }
 
   addTask(event, listId) {
@@ -48,9 +49,10 @@ export default class ListsController {
 
   removeTask(listId, taskName) {
     console.log(listId, taskName)
-    confirm("Are you sure?")
+    if (confirm("Are you sure?") == true) {
     _listServ.removeTask(listId, taskName)
     _drawLists()
+    }
   }
 
   colorChange(color) {
