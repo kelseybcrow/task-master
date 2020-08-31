@@ -32,7 +32,7 @@ export default class ListsController {
 
   removeList(id) {
     console.log(id)
-    if (confirm("Are you sure?") == true) {
+    if (confirm("Are you sure?")) {
       _listServ.deleteList(id)
       _drawLists()
     }
@@ -49,7 +49,7 @@ export default class ListsController {
 
   removeTask(listId, taskName) {
     console.log(listId, taskName)
-    if (confirm("Are you sure?") == true) {
+    if (confirm("Are you sure?")) {
     _listServ.removeTask(listId, taskName)
     _drawLists()
     }
