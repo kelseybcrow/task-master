@@ -32,6 +32,7 @@ export default class ListsController {
 
   removeList(id) {
     console.log(id)
+    confirm("Are you sure?")
     _listServ.deleteList(id)
     _drawLists()
   }
@@ -47,6 +48,7 @@ export default class ListsController {
 
   removeTask(listId, taskName) {
     console.log(listId, taskName)
+    confirm("Are you sure?")
     _listServ.removeTask(listId, taskName)
     _drawLists()
   }
